@@ -73,7 +73,7 @@ public class Register extends javax.swing.JFrame {
         jLabel4.setText("Sudah memiliki akun?");
         loginPanel_kiri.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 540, -1, -1));
 
-        goToSignin.setBackground(new java.awt.Color(58, 194, 178));
+        goToSignin.setBackground(new java.awt.Color(255, 255, 255));
         goToSignin.setFont(new java.awt.Font("Franklin Gothic Book", 0, 20)); // NOI18N
         goToSignin.setForeground(new java.awt.Color(61, 146, 136));
         goToSignin.setText("Sign In");
@@ -112,7 +112,7 @@ public class Register extends javax.swing.JFrame {
 
         registerButton.setBackground(new java.awt.Color(58, 194, 178));
         registerButton.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        registerButton.setForeground(new java.awt.Color(58, 194, 178));
+        registerButton.setForeground(new java.awt.Color(255, 255, 255));
         registerButton.setText("Register");
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,7 +154,9 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void goToSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToSigninActionPerformed
-        // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_goToSigninActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
