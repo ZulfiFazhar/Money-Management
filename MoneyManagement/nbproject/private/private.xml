@@ -2,16 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/Register.java</file>
             <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Main.java</file>
             <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/NewJFrame.java</file>
-            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Register.java</file>
-            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Login.java</file>
-            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Dashboard.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/Login.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/Dashboard.java</file>
         </group>
-=======
-        <group/>
->>>>>>> 672e69d1fe4cd82bdcf9e54088c39488a17757de
     </open-files>
 </project-private>
