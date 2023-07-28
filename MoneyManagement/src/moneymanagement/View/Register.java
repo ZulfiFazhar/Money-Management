@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package moneymanagement;
+package moneymanagement.View;
 
 /**
  *
@@ -55,7 +55,7 @@ public class Register extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Hallo!");
+        jLabel1.setText("Hallo, gaes!");
         loginPanel_kiri.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 24)); // NOI18N
