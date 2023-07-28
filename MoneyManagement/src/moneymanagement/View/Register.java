@@ -5,16 +5,24 @@
  */
 package moneymanagement.View;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTextField;
+import moneymanagement.Controller.UsersController;
+import moneymanagement.Exception.UsersException;
+
 /**
  *
  * @author zulfa
  */
 public class Register extends javax.swing.JFrame {
-
+    UsersController usersController;
     /**
      * Creates new form Register
      */
     public Register() {
+        usersController = new UsersController();
         initComponents();
     }
 
@@ -55,7 +63,7 @@ public class Register extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Hallo, gaes!");
+        jLabel1.setText("Hallo!");
         loginPanel_kiri.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 24)); // NOI18N
@@ -114,6 +122,11 @@ public class Register extends javax.swing.JFrame {
         registerButton.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         registerButton.setForeground(new java.awt.Color(255, 255, 255));
         registerButton.setText("Register");
+        registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerButtonMouseClicked(evt);
+            }
+        });
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerButtonActionPerformed(evt);
@@ -167,9 +180,29 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_registerEmailActionPerformed
 
+    public JTextField getRegisterEmail() {
+        return registerEmail;
+    }
+
+    public JTextField getRegisterPassword() {
+        return registerPassword;
+    }
+
+    public JTextField getRegisterUsername() {
+        return registerUsername;
+    }
+
     private void registerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerPasswordActionPerformed
+
+    private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
+        try {
+            usersController.tambahUser(this);
+        } catch (SQLException | UsersException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_registerButtonMouseClicked
 
     /**
      * @param args the command line arguments

@@ -4,50 +4,37 @@
  * and open the template in the editor.
  */
 package moneymanagement.Model;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
+import moneymanagement.Controller.UsersDaoCtrl;
+import moneymanagement.Service.UsersDAO;
 /**
  *
- * @author zulfi
+ * @author Kelompok 3
  */
 public class Koneksi {
-    public Connection getConnection() {
-    Connection conn = null;
-    String url = "jdbc:mysql://localhost:3306/money_management";
-    String user = "root";
-    String password = "";
-
-    try {
-        conn = DriverManager.getConnection(url, user, password);
-        System.out.println("Koneksi ke database berhasil.");
-    } catch (SQLException e) {
-        System.err.println("Error saat terhubung ke database: " + e.getMessage());
-    }
+    private static Connection connection;
+    private static UsersDAO usersDAO;
     
-    return conn;
-}
-    
-    public void executeQuery(String sql) {
-    Connection conn = getConnection();
-    Statement stmt = null;
-
-    try {
-        stmt = conn.createStatement();
-        stmt.executeUpdate(sql);
-        System.out.println("Query berhasil dijalankan.");
-    } catch (SQLException e) {
-        System.err.println("Error saat menjalankan query: " + e.getMessage());
-    } finally {
-        try {
-            if (stmt != null) stmt.close();
-            if (conn != null) conn.close();
-        } catch (SQLException e) {
-            System.err.println("Error saat menutup koneksi: " + e.getMessage());
+    public static Connection getConnection() throws SQLException{
+        
+        if(connection == null){
+            MysqlDataSource dataSource = new MysqlDataSource();
+        
+            dataSource.setURL("jdbc:mysql://localhost:3306/money_management");
+            dataSource.setUser("root");
+            dataSource.setPassword("");
+            
+            connection = dataSource.getConnection();
         }
+        return connection;
     }
-}
-
+    
+    public static UsersDAO getUsers() throws SQLException{
+        if(usersDAO == null){
+            usersDAO = new UsersDaoCtrl(getConnection());
+        }
+        return usersDAO;
+    }
 }
