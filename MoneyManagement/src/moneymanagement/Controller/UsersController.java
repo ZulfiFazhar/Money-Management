@@ -12,18 +12,25 @@ import moneymanagement.Exception.UsersException;
 import moneymanagement.Model.Koneksi;
 import moneymanagement.Service.UsersDAO;
 import moneymanagement.View.Register;
+import moneymanagement.View.Login;
 
 /**
  *
  * @author Kelompok 3
  */
 public class UsersController {
+    private UsersDAO usersDao;
+    
+    public UsersController(){
+        try {
+            usersDao = Koneksi.getUsers();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
     public void tambahUser(Register register) throws SQLException, UsersException{
-        Koneksi.getConnection();
-        
-        UsersDAO dao = Koneksi.getUsers();
         Users users = new Users();
-        
         users.setUsername(register.getRegisterUsername().getText());
         users.setEmail(register.getRegisterEmail().getText());
         users.setPassword(register.getRegisterPassword().getText());
@@ -35,8 +42,13 @@ public class UsersController {
         } else if(users.getPassword().trim().equals("")){
             JOptionPane.showMessageDialog(register, "password tidak boleh kosong");
         } else {
-            dao.insertUsers(users);
+            usersDao.insertUsers(users);
             JOptionPane.showMessageDialog(null, "Registrasi Berhasil");
         }
+    }
+    
+    public Users getUserByUsername(String username) throws SQLException, UsersException {
+        // Mengambil data pengguna dari database berdasarkan username
+        return usersDao.getUserByUsername(username);
     }
 }

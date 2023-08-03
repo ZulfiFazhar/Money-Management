@@ -7,6 +7,7 @@ package moneymanagement.Controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import moneymanagement.Entity.Users;
 import moneymanagement.Exception.UsersException;
@@ -59,6 +60,24 @@ public class UsersDaoCtrl implements UsersDAO {
                 }
             }
         }
+    }
+
+    @Override
+    public Users getUserByUsername(String username) throws SQLException, UsersException {
+        Users user = null;
+        String query = "SELECT * FROM users WHERE username = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    user = new Users();
+                    user.setUsername(resultSet.getString("username"));
+                    user.setEmail(resultSet.getString("email"));
+                    user.setPassword(resultSet.getString("password"));
+                }
+            }
+        }
+        return user;
     }
     
     

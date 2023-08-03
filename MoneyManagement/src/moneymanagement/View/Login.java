@@ -5,7 +5,10 @@
  */
 package moneymanagement.View;
 
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import moneymanagement.Exception.UsersException;
 import moneymanagement.Model.Koneksi;
 
 /**
@@ -158,7 +161,25 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        // TODO add your handling code here:
+    String username = loginUsername.getText();
+    String password = loginPassword.getText();
+
+    try {
+        // Panggil UserController untuk melakukan proses login
+        boolean loggedIn;
+        loggedIn = Koneksi.login(username, password);
+
+        if (loggedIn) {
+            // Jika login berhasil, arahkan ke halaman Dashboard
+            Dashboard dashboard = new Dashboard();
+            dashboard.setVisible(true);
+            this.dispose(); // Tutup halaman login
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid username or password!");
+        }
+    } catch (UsersException | SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Login error: " + ex.getMessage());
+    }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void goToRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRegisterActionPerformed

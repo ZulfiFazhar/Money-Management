@@ -7,7 +7,10 @@ package moneymanagement.Model;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import moneymanagement.Controller.UsersController;
 import moneymanagement.Controller.UsersDaoCtrl;
+import moneymanagement.Entity.Users;
+import moneymanagement.Exception.UsersException;
 import moneymanagement.Service.UsersDAO;
 /**
  *
@@ -36,5 +39,16 @@ public class Koneksi {
             usersDAO = new UsersDaoCtrl(getConnection());
         }
         return usersDAO;
+    }
+    
+    public static boolean login(String username, String password) throws SQLException, UsersException {
+        // Membuat instance dari UsersController
+        UsersController usersController = new UsersController();
+
+        Users user = usersController.getUserByUsername(username);
+        if (user != null && user.getPassword().equals(password)) {
+            return true; // Jika username dan password sesuai, login berhasil
+        }
+        return false; // Jika tidak sesuai, login gagal
     }
 }
