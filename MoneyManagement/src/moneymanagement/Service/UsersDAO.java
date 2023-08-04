@@ -7,6 +7,7 @@ package moneymanagement.Service;
 import java.sql.SQLException;
 import moneymanagement.Entity.Users;
 import moneymanagement.Exception.UsersException;
+import moneymanagement.View.Dashboard;
 
 /**
  *
@@ -15,4 +16,5 @@ import moneymanagement.Exception.UsersException;
 public interface UsersDAO {
     public void insertUsers(Users users) throws UsersException;
     Users getUserByUsername(String username) throws SQLException, UsersException;
+    Dashboard getNameByUsername(String username) throws SQLException, UsersException;
 }

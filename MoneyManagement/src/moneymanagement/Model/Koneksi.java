@@ -40,15 +40,5 @@ public class Koneksi {
         }
         return usersDAO;
     }
-    
-    public static boolean login(String username, String password) throws SQLException, UsersException {
-        // Membuat instance dari UsersController
-        UsersController usersController = new UsersController();
 
-        Users user = usersController.getUserByUsername(username);
-        if (user != null && user.getPassword().equals(password)) {
-            return true; // Jika username dan password sesuai, login berhasil
-        }
-        return false; // Jika tidak sesuai, login gagal
-    }
 }

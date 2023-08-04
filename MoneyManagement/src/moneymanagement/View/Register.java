@@ -51,6 +51,8 @@ public class Register extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        registerName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -101,22 +103,20 @@ public class Register extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 37)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(58, 194, 178));
         jLabel8.setText("Register");
-        loginPanel_kanan.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
+        loginPanel_kanan.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
         registerUsername.setBackground(new java.awt.Color(217, 217, 217));
         registerUsername.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        registerUsername.setForeground(new java.awt.Color(255, 255, 255));
-        loginPanel_kanan.add(registerUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 380, 50));
+        loginPanel_kanan.add(registerUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 380, 50));
 
         registerPassword.setBackground(new java.awt.Color(217, 217, 217));
         registerPassword.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        registerPassword.setForeground(new java.awt.Color(255, 255, 255));
         registerPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerPasswordActionPerformed(evt);
             }
         });
-        loginPanel_kanan.add(registerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 380, 50));
+        loginPanel_kanan.add(registerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 380, 50));
 
         registerButton.setBackground(new java.awt.Color(58, 194, 178));
         registerButton.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
@@ -132,32 +132,40 @@ public class Register extends javax.swing.JFrame {
                 registerButtonActionPerformed(evt);
             }
         });
-        loginPanel_kanan.add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 500, 380, 50));
+        loginPanel_kanan.add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 580, 380, 50));
 
         registerEmail.setBackground(new java.awt.Color(217, 217, 217));
         registerEmail.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        registerEmail.setForeground(new java.awt.Color(255, 255, 255));
         registerEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerEmailActionPerformed(evt);
             }
         });
-        loginPanel_kanan.add(registerEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 380, 50));
+        loginPanel_kanan.add(registerEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 380, 50));
 
         jLabel5.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(58, 194, 178));
         jLabel5.setText("Username");
-        loginPanel_kanan.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+        loginPanel_kanan.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(58, 194, 178));
         jLabel6.setText("Email");
-        loginPanel_kanan.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        loginPanel_kanan.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(58, 194, 178));
         jLabel7.setText("Password");
-        loginPanel_kanan.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
+        loginPanel_kanan.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(58, 194, 178));
+        jLabel9.setText("Name");
+        loginPanel_kanan.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
+
+        registerName.setBackground(new java.awt.Color(217, 217, 217));
+        registerName.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
+        loginPanel_kanan.add(registerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 380, 50));
 
         loginPanel.add(loginPanel_kanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, -1, -1));
 
@@ -190,6 +198,10 @@ public class Register extends javax.swing.JFrame {
 
     public JTextField getRegisterUsername() {
         return registerUsername;
+    }
+
+    public JTextField getRegisterName() {
+        return registerName;
     }
 
     private void registerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerPasswordActionPerformed
@@ -233,6 +245,7 @@ public class Register extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Register().setVisible(true);
             }
@@ -249,11 +262,13 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel loginPanel_kanan;
     private javax.swing.JPanel loginPanel_kiri;
     private javax.swing.JButton registerButton;
     private javax.swing.JTextField registerEmail;
+    private javax.swing.JTextField registerName;
     private javax.swing.JTextField registerPassword;
     private javax.swing.JTextField registerUsername;
     // End of variables declaration//GEN-END:variables

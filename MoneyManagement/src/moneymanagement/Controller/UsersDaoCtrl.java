@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import moneymanagement.Entity.Users;
 import moneymanagement.Exception.UsersException;
 import moneymanagement.Service.UsersDAO;
+import moneymanagement.View.Dashboard;
 
 /**
  *
@@ -20,8 +21,8 @@ import moneymanagement.Service.UsersDAO;
 public class UsersDaoCtrl implements UsersDAO {
     private Connection connection;
     private final String insertUsers = "INSERT INTO users"
-                                       + "(username,email,password) "
-                                       + "VALUES(?,?,?)";
+                                       + "(username,name,email,password) "
+                                       + "VALUES(?,?,?,?)";
 
     public UsersDaoCtrl(Connection connection){
         this.connection = connection;
@@ -35,8 +36,9 @@ public class UsersDaoCtrl implements UsersDAO {
             connection.setAutoCommit(false);
             statement = connection.prepareStatement(insertUsers);
             statement.setString(1, users.getUsername());
-            statement.setString(2, users.getEmail());
-            statement.setString(3, users.getPassword());
+            statement.setString(2, users.getName());
+            statement.setString(3, users.getEmail());
+            statement.setString(4, users.getPassword());
             statement.executeUpdate();
             
             connection.commit();
@@ -72,12 +74,28 @@ public class UsersDaoCtrl implements UsersDAO {
                 if (resultSet.next()) {
                     user = new Users();
                     user.setUsername(resultSet.getString("username"));
+                    user.setName(resultSet.getString("name"));
                     user.setEmail(resultSet.getString("email"));
                     user.setPassword(resultSet.getString("password"));
                 }
             }
         }
         return user;
+    }
+
+    @Override
+    public Dashboard getNameByUsername(String username) throws SQLException, UsersException {
+        Dashboard dashboard = new Dashboard();
+        String nameDb = "SELECT name FROM users WHERE username = ?";
+        try (PreparedStatement statement = connection.prepareStatement(nameDb)) {
+            statement.setString(1, username);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    dashboard.setNameLabel(resultSet.getString("username"));
+                }
+            }
+        }
+        return dashboard;
     }
     
     

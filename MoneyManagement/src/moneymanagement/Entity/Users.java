@@ -10,7 +10,7 @@ package moneymanagement.Entity;
  * @author zulfi
  */
 public class Users {
-    private String username, email, password;
+    private String username, name, email, password;
 
     public String getUsername() {
         return username;
@@ -32,13 +32,30 @@ public class Users {
     public void setPassword(String password) {
         this.password = password;
     } 
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     
     public Users(){
         
     }
     
-    public Users(String username, String email, String password){
+    /**
+     *
+     * @param username
+     * @param name
+     * @param email
+     * @param password
+     */
+    public Users(String username, String name, String email, String password){
         this.username = username;
+        this.name = name;
         this.email = email;
         this.password = password;
     }

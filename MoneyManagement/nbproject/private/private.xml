@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/Register.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Main.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/DashboardPanel/DashboardView.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Controller/Dashboard/DashboardController.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/Dashboard.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/DashboardPanel/SaldoView.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Exception/UsersException.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Service/UsersDAO.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Entity/Users.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Controller/UsersController.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Entity/Session.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Controller/LoginController.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Controller/UsersDaoCtrl.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Model/Koneksi.java</file>
+        </group>
     </open-files>
 </project-private>
