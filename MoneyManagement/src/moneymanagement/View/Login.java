@@ -5,8 +5,10 @@
  */
 package moneymanagement.View;
 
+import java.awt.Color;
+import javax.swing.JButton;
 import javax.swing.JTextField;
-import moneymanagement.Model.Koneksi;
+import moneymanagement.Controller.Register.RegisterController;
 
 /**
  *
@@ -19,7 +21,6 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        Koneksi koneksi = new Koneksi();
     }
 
     public JTextField getLoginPassword() {
@@ -36,6 +37,10 @@ public class Login extends javax.swing.JFrame {
 
     public void setLoginUsername(JTextField loginUsername) {
         this.loginUsername = loginUsername;
+    }
+
+    public JButton getLoginButton() {
+        return loginButton;
     }
     
     
@@ -57,15 +62,16 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         goToRegister = new javax.swing.JButton();
         loginPanel_kanan = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         loginUsername = new javax.swing.JTextField();
         loginPassword = new javax.swing.JTextField();
         loginButton = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("UangKu App");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,9 +117,6 @@ public class Login extends javax.swing.JFrame {
         loginPanel_kanan.setPreferredSize(new java.awt.Dimension(640, 720));
         loginPanel_kanan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Zulfi\\Downloads\\Rupiah (1).png")); // NOI18N
-        loginPanel_kanan.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
-
         jLabel5.setFont(new java.awt.Font("Franklin Gothic Book", 0, 24)); // NOI18N
         jLabel5.setText("Uangku");
         loginPanel_kanan.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
@@ -129,14 +132,35 @@ public class Login extends javax.swing.JFrame {
 
         loginUsername.setBackground(new java.awt.Color(217, 217, 217));
         loginUsername.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        loginUsername.setForeground(new java.awt.Color(255, 255, 255));
-        loginUsername.setText("    Username");
+        loginUsername.setForeground(new java.awt.Color(245, 237, 237));
+        loginUsername.setText("Enter Username");
+        loginUsername.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                loginUsernameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                loginUsernameFocusLost(evt);
+            }
+        });
+        loginUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginUsernameActionPerformed(evt);
+            }
+        });
         loginPanel_kanan.add(loginUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 380, 50));
 
         loginPassword.setBackground(new java.awt.Color(217, 217, 217));
         loginPassword.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        loginPassword.setForeground(new java.awt.Color(255, 255, 255));
-        loginPassword.setText("    Password");
+        loginPassword.setForeground(new java.awt.Color(245, 237, 237));
+        loginPassword.setText("Enter Password");
+        loginPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                loginPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                loginPasswordFocusLost(evt);
+            }
+        });
         loginPanel_kanan.add(loginPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 380, 50));
 
         loginButton.setBackground(new java.awt.Color(58, 194, 178));
@@ -150,6 +174,9 @@ public class Login extends javax.swing.JFrame {
         });
         loginPanel_kanan.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, 380, 50));
 
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/logo 1.png"))); // NOI18N
+        loginPanel_kanan.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
+
         loginPanel.add(loginPanel_kanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, -1, -1));
 
         getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -162,10 +189,53 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void goToRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToRegisterActionPerformed
-        Register register = new Register();
-        register.setVisible(true);
+        java.awt.EventQueue.invokeLater(() -> {
+            Register registerView = new Register();
+            RegisterController registerController = new RegisterController(registerView);
+            registerController.showView();
+        });
         this.dispose();
     }//GEN-LAST:event_goToRegisterActionPerformed
+
+    private void loginUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginUsernameActionPerformed
+
+    private void loginUsernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginUsernameFocusGained
+        // TODO add your handling code here:
+        if(loginUsername.getText().equals("Enter Username"))
+        {
+            loginUsername.setText("");
+            loginUsername.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_loginUsernameFocusGained
+
+    private void loginUsernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginUsernameFocusLost
+        // TODO add your handling code here:
+          if(loginUsername.getText().equals(""))
+        {
+            loginUsername.setText("Enter Username");
+            loginUsername.setForeground(new Color(245,237,237));
+        }
+    }//GEN-LAST:event_loginUsernameFocusLost
+
+    private void loginPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginPasswordFocusGained
+        // TODO add your handling code here:
+          if(loginPassword.getText().equals("Enter Password"))
+        {
+            loginPassword.setText("");
+            loginPassword.setForeground(new Color(0,0,0));
+        }
+    }//GEN-LAST:event_loginPasswordFocusGained
+
+    private void loginPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_loginPasswordFocusLost
+        // TODO add your handling code here:
+          if(loginPassword.getText().equals(""))
+        {
+            loginPassword.setText("Enter Password");
+            loginPassword.setForeground(new Color(245,237,237));
+        }
+    }//GEN-LAST:event_loginPasswordFocusLost
 
     /**
      * @param args the command line arguments

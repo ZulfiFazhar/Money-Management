@@ -3,11 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/Register.java</file>
-            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/Main.java</file>
-            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/NewJFrame.java</file>
-            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/Login.java</file>
-            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/Tugas-Besar/MoneyManagement/src/moneymanagement/View/Dashboard.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Panel/TransaksiForm.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Panel/MainView.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Panel/TransaksiView.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Panel/SaldoView.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/Model/Panel/PemasukanModel.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/Model/Panel/PengeluaranModel.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Panel/StatistikView.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/Main/Main.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/Controller/Transaksi/TransaksiController.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/Controller/Dashboard/MainPanelController.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/Controller/Dashboard/SaldoPanelController.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Login.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Dashboard.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Register.java</file>
+            <file>file:/E:/Zulfi/Tugas-Kuliah/Semester-2/PBO/tubes2/MoneyManagement2/src/moneymanagement/View/Panel/AboutView.java</file>
         </group>
     </open-files>
 </project-private>
