@@ -1,29 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package moneymanagement.View;
 
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JTextField;
-import moneymanagement.Controller.UsersController;
-import moneymanagement.Exception.UsersException;
+import moneymanagement.Controller.Login.LoginController;
 
-/**
- *
- * @author zulfa
- */
 public class Register extends javax.swing.JFrame {
-    UsersController usersController;
+
     /**
      * Creates new form Register
      */
     public Register() {
-        usersController = new UsersController();
         initComponents();
+    }
+
+    public JButton getRegisterButton() {
+        return registerButton;
+    }
+
+    public JTextField getRegisterEmail() {
+        return registerEmail;
+    }
+
+    public JTextField getRegisterPassword() {
+        return registerPassword;
+    }
+
+    public JTextField getRegisterUsername() {
+        return registerUsername;
     }
 
     /**
@@ -53,6 +56,7 @@ public class Register extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("UangKu App");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,8 +77,8 @@ public class Register extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Book", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("login menggunakan akun anda");
-        loginPanel_kiri.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+        jLabel3.setText("buat akun dulu yuk!");
+        loginPanel_kiri.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Book", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,12 +109,10 @@ public class Register extends javax.swing.JFrame {
 
         registerUsername.setBackground(new java.awt.Color(217, 217, 217));
         registerUsername.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        registerUsername.setForeground(new java.awt.Color(255, 255, 255));
         loginPanel_kanan.add(registerUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 380, 50));
 
         registerPassword.setBackground(new java.awt.Color(217, 217, 217));
         registerPassword.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        registerPassword.setForeground(new java.awt.Color(255, 255, 255));
         registerPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerPasswordActionPerformed(evt);
@@ -122,11 +124,6 @@ public class Register extends javax.swing.JFrame {
         registerButton.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         registerButton.setForeground(new java.awt.Color(255, 255, 255));
         registerButton.setText("Register");
-        registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                registerButtonMouseClicked(evt);
-            }
-        });
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerButtonActionPerformed(evt);
@@ -136,7 +133,6 @@ public class Register extends javax.swing.JFrame {
 
         registerEmail.setBackground(new java.awt.Color(217, 217, 217));
         registerEmail.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
-        registerEmail.setForeground(new java.awt.Color(255, 255, 255));
         registerEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerEmailActionPerformed(evt);
@@ -167,42 +163,25 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void goToSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToSigninActionPerformed
-        Login login = new Login();
-        login.setVisible(true);
+        java.awt.EventQueue.invokeLater(() -> {
+            Login login = new Login();
+            LoginController loginController = new LoginController(login);
+            loginController.showView();
+        });
         this.dispose();
     }//GEN-LAST:event_goToSigninActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_registerButtonActionPerformed
 
     private void registerEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerEmailActionPerformed
 
-    public JTextField getRegisterEmail() {
-        return registerEmail;
-    }
-
-    public JTextField getRegisterPassword() {
-        return registerPassword;
-    }
-
-    public JTextField getRegisterUsername() {
-        return registerUsername;
-    }
-
     private void registerPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerPasswordActionPerformed
-
-    private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
-        try {
-            usersController.tambahUser(this);
-        } catch (SQLException | UsersException ex) {
-            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_registerButtonMouseClicked
 
     /**
      * @param args the command line arguments
