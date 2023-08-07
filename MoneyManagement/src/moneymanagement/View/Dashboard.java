@@ -1,46 +1,131 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package moneymanagement.View;
 
 import java.awt.Color;
-import java.sql.SQLException;
-import javax.swing.JLabel;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JPanel;
-import moneymanagement.Controller.Dashboard.DashboardController;
-import moneymanagement.Controller.UsersController;
-import moneymanagement.Entity.Users;
-import moneymanagement.Exception.UsersException;
-import moneymanagement.View.DashboardPanel.DashboardView;
-import moneymanagement.View.DashboardPanel.SaldoView;
-/**
- *
- * @author zulfa
- */
+import moneymanagement.Controller.Dashboard.MainPanelController;
+import moneymanagement.Controller.Dashboard.SaldoPanelController;
+import moneymanagement.Controller.Login.LoginController;
+import moneymanagement.Model.Panel.PemasukanModel;
+import moneymanagement.Model.Panel.PengeluaranModel;
+import moneymanagement.Model.User.UserSession;
+import moneymanagement.View.Panel.AboutView;
+import moneymanagement.View.Panel.MainView;
+import moneymanagement.View.Panel.SaldoView;
+import moneymanagement.View.Panel.StatistikView;
+import moneymanagement.View.Panel.TransaksiView;
+
 public class Dashboard extends javax.swing.JFrame {
     
-    DashboardView dashboardView = new DashboardView();
+    MainView mainView = new MainView();
     SaldoView saldoView = new SaldoView();
-    private UsersController usersController;
+    TransaksiView transaksiView = new TransaksiView();
+    StatistikView statistikView = new StatistikView();
+    AboutView aboutView = new AboutView();
+    
+    private MainPanelController dashboardController;
+    private SaldoPanelController saldoController;
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
-//        dashboardController = new DashboardController();
-//        dashboardController.setDashboardView(new DashboardView());
-//        dashboardController.setSaldoView(new SaldoView());
-        
         initComponents();
-        usersController = new UsersController();
-        mainPanel.add(dashboardView);
+        mainPanel.add(mainView);
         mainPanel.add(saldoView);
-        dashboardView.setVisible(false);
-        saldoView.setVisible(false);
+        mainPanel.add(transaksiView);
+        mainPanel.add(statistikView);
+        mainPanel.add(aboutView);
+        
+        setPanelVisibility(mainView, false);
+        setPanelVisibility(saldoView, false);
+        setPanelVisibility(transaksiView, false);
+        setPanelVisibility(statistikView, false);
+        setPanelVisibility(aboutView, false);
+        
+        PemasukanModel model = new PemasukanModel();
+        PengeluaranModel model2 = new PengeluaranModel();
+        
+        dashboardController = new MainPanelController(this, model, model2);
+        saldoController = new SaldoPanelController(this, model, model2);
 
+        String username = UserSession.getUsername();
+        refreshDataFromDatabase();
+    }
+    
+    private void setPanelVisibility(JPanel panel, boolean visible) {
+        panel.setVisible(visible);
+        panel.revalidate();
+        panel.repaint();
+    }
+    
+    private void handleMenuClick(JPanel targetPanel) {
+        setPanelVisibility(mainView, false);
+        setPanelVisibility(saldoView, false);
+        setPanelVisibility(transaksiView, false);
+        setPanelVisibility(statistikView, false);
+        setPanelVisibility(aboutView, false);
+
+        setPanelVisibility(targetPanel, true);
     }
 
+    public void setUserInfo(String username, String email) {
+        nameLabel.setText(username);
+        emailLabel.setText(email);
+    }
+    
+    public void updateSaldoMainView(int totalSaldo, int cashSaldo, int debitSaldo, int emoneySaldo) {
+        mainView.setSaldoLabels(totalSaldo, cashSaldo, debitSaldo, emoneySaldo);
+    }
+    
+    public void updateTotalSaldoView(int totalSaldo) {
+        saldoView.setTotalSaldoLabel(totalSaldo);
+    }
+    public void updatePemasukanSaldoView(int pemasukanSaldo) {
+        saldoView.setPemasukanLabel(pemasukanSaldo);
+    }
+    public void updatePengeluaranSaldoView(int pengeluaranSaldo) {
+        saldoView.setPengeluaranLabel(pengeluaranSaldo);
+    }
+    public void updateCashSaldoView(int cashSaldo){
+        saldoView.setCashSaldoLabel(cashSaldo);
+    }
+    public void updateGopaySaldoView(int gopaySaldo){
+        saldoView.setGopayLabel(gopaySaldo);
+    }
+    public void updateOvoSaldoView(int ovoSaldo){
+        saldoView.setOvoLabel(ovoSaldo);
+    }
+    public void updateSpaySaldoView(int spaySaldo){
+        saldoView.setSpayLabel(spaySaldo);
+    }
+    public void updateDebitBriView(int debitBri){
+        saldoView.setBriLabel(debitBri);
+    }
+    public void updateDebitBcaView(int debitBca){
+        saldoView.setBcaLabel(debitBca);
+    }
+//    public void updatePieChartPemasukanView(int totalPemasukan){
+//        mainView.showPieChart(totalPemasukan);
+//    }
+    
+    
+    private void refreshDataFromDatabase() {
+        MainView main = new MainView();
+        StatistikView stat = new StatistikView();
+        dashboardController.updateSaldoLabels();
+        saldoController.updateTotalSaldoLabels();
+        saldoController.updatePemasukanSaldoLabels();
+        saldoController.updatePengeluaranSaldoLabels();
+        saldoController.updateCashSaldoLabels();
+        saldoController.updateGopaySaldoLabels();
+        saldoController.updateOvoSaldoLabels();
+        saldoController.updateSpaySaldoLabels();
+        saldoController.updateDebitBriLabels();
+        saldoController.updateDebitBcaLabels();
+}
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,24 +143,26 @@ public class Dashboard extends javax.swing.JFrame {
         menuSaldo = new javax.swing.JLabel();
         navMenuTransaksi = new javax.swing.JPanel();
         menuTransaksi = new javax.swing.JLabel();
-        navMenuStatistik = new javax.swing.JPanel();
-        menuStatistik = new javax.swing.JLabel();
+        navMenuTentang = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         navMenuLogout = new javax.swing.JPanel();
         menuStatistik1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
+        navMenuStatistik = new javax.swing.JPanel();
+        menuStatistik2 = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("UANGKU APP");
+        setTitle("UangKu App");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         navPanel.setBackground(new java.awt.Color(57, 194, 178));
         navPanel.setPreferredSize(new java.awt.Dimension(310, 720));
         navPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        navLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/assets/icon/logo.png"))); // NOI18N
+        navLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/logo.png"))); // NOI18N
         navPanel.add(navLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
         navMenuDashboard.setBackground(new java.awt.Color(57, 194, 178));
@@ -90,13 +177,16 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 navMenuDashboardMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                navMenuDashboardMousePressed(evt);
+            }
         });
         navMenuDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/assets/icon/dashboard.png"))); // NOI18N
+        menuDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/dashboard.png"))); // NOI18N
         navMenuDashboard.add(menuDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        navPanel.add(navMenuDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        navPanel.add(navMenuDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         navMenuSaldo.setBackground(new java.awt.Color(57, 194, 178));
         navMenuSaldo.setPreferredSize(new java.awt.Dimension(290, 80));
@@ -113,14 +203,17 @@ public class Dashboard extends javax.swing.JFrame {
         });
         navMenuSaldo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuSaldo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/assets/icon/saldo.png"))); // NOI18N
+        menuSaldo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/saldo.png"))); // NOI18N
         navMenuSaldo.add(menuSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        navPanel.add(navMenuSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, 80));
+        navPanel.add(navMenuSaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, 80));
 
         navMenuTransaksi.setBackground(new java.awt.Color(57, 194, 178));
         navMenuTransaksi.setPreferredSize(new java.awt.Dimension(290, 80));
         navMenuTransaksi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navMenuTransaksiMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 navMenuTransaksiMouseEntered(evt);
             }
@@ -130,31 +223,37 @@ public class Dashboard extends javax.swing.JFrame {
         });
         navMenuTransaksi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuTransaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/assets/icon/transaksi.png"))); // NOI18N
+        menuTransaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/transaksi.png"))); // NOI18N
         navMenuTransaksi.add(menuTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 40));
 
-        navPanel.add(navMenuTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 80));
+        navPanel.add(navMenuTransaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 80));
 
-        navMenuStatistik.setBackground(new java.awt.Color(57, 194, 178));
-        navMenuStatistik.setPreferredSize(new java.awt.Dimension(290, 80));
-        navMenuStatistik.addMouseListener(new java.awt.event.MouseAdapter() {
+        navMenuTentang.setBackground(new java.awt.Color(57, 194, 178));
+        navMenuTentang.setPreferredSize(new java.awt.Dimension(290, 80));
+        navMenuTentang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navMenuTentangMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                navMenuStatistikMouseEntered(evt);
+                navMenuTentangMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                navMenuStatistikMouseExited(evt);
+                navMenuTentangMouseExited(evt);
             }
         });
-        navMenuStatistik.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        navMenuTentang.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuStatistik.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/assets/icon/statistik.png"))); // NOI18N
-        navMenuStatistik.add(menuStatistik, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/about.png"))); // NOI18N
+        navMenuTentang.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        navPanel.add(navMenuStatistik, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, 80));
+        navPanel.add(navMenuTentang, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 290, 70));
 
         navMenuLogout.setBackground(new java.awt.Color(57, 194, 178));
         navMenuLogout.setPreferredSize(new java.awt.Dimension(290, 80));
         navMenuLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navMenuLogoutMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 navMenuLogoutMouseEntered(evt);
             }
@@ -164,12 +263,12 @@ public class Dashboard extends javax.swing.JFrame {
         });
         navMenuLogout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuStatistik1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/assets/icon/logout.png"))); // NOI18N
+        menuStatistik1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/logout.png"))); // NOI18N
         navMenuLogout.add(menuStatistik1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         navPanel.add(navMenuLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/assets/icon/profile.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/profile.png"))); // NOI18N
         navPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, -1, -1));
 
         emailLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,6 +280,26 @@ public class Dashboard extends javax.swing.JFrame {
         nameLabel.setText("Dummy");
         navPanel.add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, -1, -1));
 
+        navMenuStatistik.setBackground(new java.awt.Color(57, 194, 178));
+        navMenuStatistik.setPreferredSize(new java.awt.Dimension(290, 80));
+        navMenuStatistik.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                navMenuStatistikMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                navMenuStatistikMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                navMenuStatistikMouseExited(evt);
+            }
+        });
+        navMenuStatistik.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        menuStatistik2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/statistik.png"))); // NOI18N
+        navMenuStatistik.add(menuStatistik2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        navPanel.add(navMenuStatistik, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, 80));
+
         getContentPane().add(navPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -191,6 +310,12 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void navMenuDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuDashboardMouseClicked
+        navMenuDashboard.setBackground(new Color(53,157,145));
+        handleMenuClick(mainView);
+        refreshDataFromDatabase();
+    }//GEN-LAST:event_navMenuDashboardMouseClicked
+
     private void navMenuDashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuDashboardMouseEntered
         navMenuDashboard.setBackground(new Color(53,157,145));
     }//GEN-LAST:event_navMenuDashboardMouseEntered
@@ -198,6 +323,12 @@ public class Dashboard extends javax.swing.JFrame {
     private void navMenuDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuDashboardMouseExited
         navMenuDashboard.setBackground(new Color(57,194,178));
     }//GEN-LAST:event_navMenuDashboardMouseExited
+
+    private void navMenuSaldoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuSaldoMouseClicked
+        navMenuSaldo.setBackground(new Color(53,157,145));
+        handleMenuClick(saldoView);
+        refreshDataFromDatabase();
+    }//GEN-LAST:event_navMenuSaldoMouseClicked
 
     private void navMenuSaldoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuSaldoMouseEntered
         navMenuSaldo.setBackground(new Color(53,157,145));
@@ -215,31 +346,13 @@ public class Dashboard extends javax.swing.JFrame {
         navMenuTransaksi.setBackground(new Color(57,194,178));
     }//GEN-LAST:event_navMenuTransaksiMouseExited
 
-    public JPanel getMainPanel() {
-        return mainPanel;
-    }
+    private void navMenuTentangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuTentangMouseEntered
+        navMenuTentang.setBackground(new Color(53,157,145));
+    }//GEN-LAST:event_navMenuTentangMouseEntered
 
-    private void navMenuStatistikMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuStatistikMouseEntered
-        navMenuStatistik.setBackground(new Color(53,157,145));
-    }//GEN-LAST:event_navMenuStatistikMouseEntered
-
-    private void navMenuStatistikMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuStatistikMouseExited
-        navMenuStatistik.setBackground(new Color(57,194,178));
-    }//GEN-LAST:event_navMenuStatistikMouseExited
-
-    private void navMenuDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuDashboardMouseClicked
-//        dashboardController.tampilDashboardView(this);
-        dashboardView.setVisible(true);
-        saldoView.setVisible(false);
-        navMenuDashboard.setBackground(new Color(53,157,145));
-    }//GEN-LAST:event_navMenuDashboardMouseClicked
-
-    private void navMenuSaldoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuSaldoMouseClicked
-//        dashboardController.tampilSaldoView(this);
-        dashboardView.setVisible(false);
-        saldoView.setVisible(true);
-        navMenuSaldo.setBackground(new Color(53,157,145));
-    }//GEN-LAST:event_navMenuSaldoMouseClicked
+    private void navMenuTentangMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuTentangMouseExited
+        navMenuTentang.setBackground(new Color(57,194,178));
+    }//GEN-LAST:event_navMenuTentangMouseExited
 
     private void navMenuLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuLogoutMouseEntered
         navMenuLogout.setBackground(new Color(53,157,145));
@@ -249,6 +362,46 @@ public class Dashboard extends javax.swing.JFrame {
         navMenuLogout.setBackground(new Color(57,194,178));
     }//GEN-LAST:event_navMenuLogoutMouseExited
 
+    private void navMenuLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuLogoutMouseClicked
+        UserSession.clearSession(); // Clear the session data
+        setUserInfo(null, null);
+        this.dispose();
+        java.awt.EventQueue.invokeLater(() -> {
+            Login login = new Login();
+            LoginController loginController = new LoginController(login);
+            loginController.showView();
+        });
+    }//GEN-LAST:event_navMenuLogoutMouseClicked
+
+    private void navMenuTransaksiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuTransaksiMouseClicked
+        handleMenuClick(transaksiView);
+        refreshDataFromDatabase();
+    }//GEN-LAST:event_navMenuTransaksiMouseClicked
+
+    private void navMenuTentangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuTentangMouseClicked
+        handleMenuClick(aboutView);
+        refreshDataFromDatabase();
+    }//GEN-LAST:event_navMenuTentangMouseClicked
+
+    private void navMenuDashboardMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuDashboardMousePressed
+
+    }//GEN-LAST:event_navMenuDashboardMousePressed
+
+    private void navMenuStatistikMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuStatistikMouseClicked
+        handleMenuClick(statistikView);
+        refreshDataFromDatabase();
+    }//GEN-LAST:event_navMenuStatistikMouseClicked
+
+    private void navMenuStatistikMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuStatistikMouseEntered
+        navMenuStatistik.setBackground(new Color(53,157,145));
+    }//GEN-LAST:event_navMenuStatistikMouseEntered
+
+    private void navMenuStatistikMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navMenuStatistikMouseExited
+        navMenuStatistik.setBackground(new Color(57,194,178));
+    }//GEN-LAST:event_navMenuStatistikMouseExited
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -284,18 +437,15 @@ public class Dashboard extends javax.swing.JFrame {
         });
     }
 
-    public void setNameLabel(JLabel nameLabel) {
-        this.nameLabel = nameLabel;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel menuDashboard;
     private javax.swing.JLabel menuSaldo;
-    private javax.swing.JLabel menuStatistik;
     private javax.swing.JLabel menuStatistik1;
+    private javax.swing.JLabel menuStatistik2;
     private javax.swing.JLabel menuTransaksi;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel navLogo;
@@ -303,6 +453,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel navMenuLogout;
     private javax.swing.JPanel navMenuSaldo;
     private javax.swing.JPanel navMenuStatistik;
+    private javax.swing.JPanel navMenuTentang;
     private javax.swing.JPanel navMenuTransaksi;
     private javax.swing.JPanel navPanel;
     // End of variables declaration//GEN-END:variables
