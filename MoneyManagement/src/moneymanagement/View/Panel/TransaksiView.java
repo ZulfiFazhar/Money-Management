@@ -44,6 +44,23 @@ public class TransaksiView extends javax.swing.JPanel {
         double transportasi = (pengeluaranTransportasi / totalPengeluaran)*100;
         double internet = (pengeluaranInternet / totalPengeluaran)*100;
         showPieChart2(makan,transportasi,internet);
+        
+        
+        
+        IncomeTotal.setText(Integer.toString((int) totalPemasukan));
+        OutcomeTotal.setText(Integer.toString((int) totalPengeluaran));
+        
+        masukMinggu1.setText(Integer.toString((int) pemasukan.getMinggu1ByUsername(username)));
+        masukMinggu2.setText(Integer.toString((int) pemasukan.getMinggu2ByUsername(username)));
+        masukMinggu3.setText(Integer.toString((int) pemasukan.getMinggu3ByUsername(username)));
+        masukMinggu4.setText(Integer.toString((int) pemasukan.getMinggu4ByUsername(username)));
+        masukMinggu5.setText(Integer.toString((int) pemasukan.getMinggu5ByUsername(username)));
+       
+        keluarMinggu1.setText(Integer.toString((int) pengeluaran.getMinggu1ByUsername(username)));
+        keluarMinggu2.setText(Integer.toString((int) pengeluaran.getMinggu2ByUsername(username)));
+        keluarMinggu3.setText(Integer.toString((int) pengeluaran.getMinggu3ByUsername(username)));
+        keluarMinggu4.setText(Integer.toString((int) pengeluaran.getMinggu4ByUsername(username)));
+        keluarMinggu5.setText(Integer.toString((int) pengeluaran.getMinggu5ByUsername(username)));
     }
     
     public void showPieChart(double bulanan, double bonus, double thr){
@@ -208,35 +225,28 @@ public class TransaksiView extends javax.swing.JPanel {
         Rp_Income_Total = new javax.swing.JLabel();
         Rp_Outcome_Total = new javax.swing.JLabel();
         OutcomeTotal = new javax.swing.JLabel();
-        DatePemasukan1 = new javax.swing.JLabel();
         MonthPengeluaran = new javax.swing.JPanel();
         Rp_Outcome1 = new javax.swing.JLabel();
         Rp_Outcome2 = new javax.swing.JLabel();
         Rp_Outcome3 = new javax.swing.JLabel();
         Rp_Outcome4 = new javax.swing.JLabel();
         Rp_Outcome5 = new javax.swing.JLabel();
-        Rp_Outcome6 = new javax.swing.JLabel();
-        Outcome1 = new javax.swing.JLabel();
-        Outcome2 = new javax.swing.JLabel();
-        Outcome3 = new javax.swing.JLabel();
-        Outcome4 = new javax.swing.JLabel();
-        Outcome5 = new javax.swing.JLabel();
-        Outcome6 = new javax.swing.JLabel();
+        keluarMinggu1 = new javax.swing.JLabel();
+        keluarMinggu2 = new javax.swing.JLabel();
+        keluarMinggu3 = new javax.swing.JLabel();
+        keluarMinggu4 = new javax.swing.JLabel();
+        keluarMinggu5 = new javax.swing.JLabel();
         MonthPemasukan = new javax.swing.JPanel();
         Rp_Income1 = new javax.swing.JLabel();
         Rp_Income2 = new javax.swing.JLabel();
         Rp_Income3 = new javax.swing.JLabel();
         Rp_Income4 = new javax.swing.JLabel();
         Rp_Income5 = new javax.swing.JLabel();
-        Rp_Income6 = new javax.swing.JLabel();
-        Income1 = new javax.swing.JLabel();
-        Income2 = new javax.swing.JLabel();
-        Income3 = new javax.swing.JLabel();
-        Income4 = new javax.swing.JLabel();
-        Income5 = new javax.swing.JLabel();
-        Income6 = new javax.swing.JLabel();
-        DatePemasukan2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        masukMinggu1 = new javax.swing.JLabel();
+        masukMinggu2 = new javax.swing.JLabel();
+        masukMinggu3 = new javax.swing.JLabel();
+        masukMinggu4 = new javax.swing.JLabel();
+        masukMinggu5 = new javax.swing.JLabel();
         IncomeTotal = new javax.swing.JLabel();
         Garis7 = new javax.swing.JLabel();
         DatePemasukan3 = new javax.swing.JLabel();
@@ -744,10 +754,6 @@ public class TransaksiView extends javax.swing.JPanel {
         OutcomeTotal.setText("99");
         Pemasukan_Pengeluaran.add(OutcomeTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 70, -1));
 
-        DatePemasukan1.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan1.setText("29/07");
-        Pemasukan_Pengeluaran.add(DatePemasukan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 205, -1, -1));
-
         MonthPengeluaran.setBackground(new java.awt.Color(248, 233, 233));
         MonthPengeluaran.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -771,35 +777,27 @@ public class TransaksiView extends javax.swing.JPanel {
         Rp_Outcome5.setText(" Rp");
         MonthPengeluaran.add(Rp_Outcome5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, -1, 20));
 
-        Rp_Outcome6.setFont(new java.awt.Font("Franklin Gothic Book", 0, 14)); // NOI18N
-        Rp_Outcome6.setText(" Rp");
-        MonthPengeluaran.add(Rp_Outcome6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, 20));
+        keluarMinggu1.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        keluarMinggu1.setText("99");
+        MonthPengeluaran.add(keluarMinggu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 70, 20));
 
-        Outcome1.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Outcome1.setText("99");
-        MonthPengeluaran.add(Outcome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 70, 20));
+        keluarMinggu2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        keluarMinggu2.setText("99");
+        MonthPengeluaran.add(keluarMinggu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 70, 20));
 
-        Outcome2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Outcome2.setText("99");
-        MonthPengeluaran.add(Outcome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 70, 20));
+        keluarMinggu3.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        keluarMinggu3.setText("99");
+        MonthPengeluaran.add(keluarMinggu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 70, 20));
 
-        Outcome3.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Outcome3.setText("99");
-        MonthPengeluaran.add(Outcome3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 70, 20));
+        keluarMinggu4.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        keluarMinggu4.setText("99");
+        MonthPengeluaran.add(keluarMinggu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 70, 20));
 
-        Outcome4.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Outcome4.setText("99");
-        MonthPengeluaran.add(Outcome4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 70, 20));
+        keluarMinggu5.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        keluarMinggu5.setText("99");
+        MonthPengeluaran.add(keluarMinggu5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
 
-        Outcome5.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Outcome5.setText("99");
-        MonthPengeluaran.add(Outcome5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
-
-        Outcome6.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Outcome6.setText("99");
-        MonthPengeluaran.add(Outcome6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 70, 20));
-
-        Pemasukan_Pengeluaran.add(MonthPengeluaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 110, 180));
+        Pemasukan_Pengeluaran.add(MonthPengeluaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 110, 150));
 
         MonthPemasukan.setBackground(new java.awt.Color(233, 248, 246));
         MonthPemasukan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -824,42 +822,27 @@ public class TransaksiView extends javax.swing.JPanel {
         Rp_Income5.setText(" Rp");
         MonthPemasukan.add(Rp_Income5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 20, 20));
 
-        Rp_Income6.setFont(new java.awt.Font("Franklin Gothic Book", 0, 14)); // NOI18N
-        Rp_Income6.setText(" Rp");
-        MonthPemasukan.add(Rp_Income6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 20, 20));
+        masukMinggu1.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        masukMinggu1.setText("99");
+        MonthPemasukan.add(masukMinggu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 70, 20));
 
-        Income1.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Income1.setText("99");
-        MonthPemasukan.add(Income1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 70, 20));
+        masukMinggu2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        masukMinggu2.setText("99");
+        MonthPemasukan.add(masukMinggu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 70, 20));
 
-        Income2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Income2.setText("99");
-        MonthPemasukan.add(Income2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 70, 20));
+        masukMinggu3.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        masukMinggu3.setText("99");
+        MonthPemasukan.add(masukMinggu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 70, 20));
 
-        Income3.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Income3.setText("99");
-        MonthPemasukan.add(Income3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 70, 20));
+        masukMinggu4.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        masukMinggu4.setText("99");
+        MonthPemasukan.add(masukMinggu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 70, 20));
 
-        Income4.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Income4.setText("99");
-        MonthPemasukan.add(Income4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 70, 20));
+        masukMinggu5.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
+        masukMinggu5.setText("99");
+        MonthPemasukan.add(masukMinggu5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
 
-        Income5.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Income5.setText("99");
-        MonthPemasukan.add(Income5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 70, 20));
-
-        Income6.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
-        Income6.setText("99");
-        MonthPemasukan.add(Income6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 70, 20));
-
-        Pemasukan_Pengeluaran.add(MonthPemasukan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 110, 180));
-
-        DatePemasukan2.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan2.setText("29/07");
-        Pemasukan_Pengeluaran.add(DatePemasukan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 205, -1, -1));
-
-        jLabel4.setText("-");
-        Pemasukan_Pengeluaran.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 205, -1, -1));
+        Pemasukan_Pengeluaran.add(MonthPemasukan, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 110, 150));
 
         IncomeTotal.setFont(new java.awt.Font("Franklin Gothic Book", 0, 13)); // NOI18N
         IncomeTotal.setText("99");
@@ -870,46 +853,46 @@ public class TransaksiView extends javax.swing.JPanel {
         Pemasukan_Pengeluaran.add(Garis7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 330, -1));
 
         DatePemasukan3.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan3.setText("29/07");
+        DatePemasukan3.setText("30/07");
         Pemasukan_Pengeluaran.add(DatePemasukan3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 55, -1, -1));
 
         DatePemasukan4.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan4.setText("29/07");
+        DatePemasukan4.setText("05/08");
         Pemasukan_Pengeluaran.add(DatePemasukan4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 55, -1, -1));
 
         jLabel5.setText("-");
         Pemasukan_Pengeluaran.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 55, -1, -1));
 
         DatePemasukan5.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan5.setText("29/07");
+        DatePemasukan5.setText("12/08");
         Pemasukan_Pengeluaran.add(DatePemasukan5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 85, -1, -1));
 
         DatePemasukan6.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan6.setText("29/07");
+        DatePemasukan6.setText("19/08");
         Pemasukan_Pengeluaran.add(DatePemasukan6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 115, -1, -1));
 
         DatePemasukan7.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan7.setText("29/07");
+        DatePemasukan7.setText("26/08");
         Pemasukan_Pengeluaran.add(DatePemasukan7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 145, -1, -1));
 
         DatePemasukan8.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan8.setText("29/07");
+        DatePemasukan8.setText("02/09");
         Pemasukan_Pengeluaran.add(DatePemasukan8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 175, -1, -1));
 
         DatePemasukan9.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan9.setText("29/07");
+        DatePemasukan9.setText("06/08");
         Pemasukan_Pengeluaran.add(DatePemasukan9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 85, -1, -1));
 
         DatePemasukan10.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan10.setText("29/07");
+        DatePemasukan10.setText("13/08");
         Pemasukan_Pengeluaran.add(DatePemasukan10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 115, -1, -1));
 
         DatePemasukan11.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan11.setText("29/07");
+        DatePemasukan11.setText("20/08");
         Pemasukan_Pengeluaran.add(DatePemasukan11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 145, -1, -1));
 
         DatePemasukan12.setFont(new java.awt.Font("Franklin Gothic Book", 0, 12)); // NOI18N
-        DatePemasukan12.setText("29/07");
+        DatePemasukan12.setText("27/08");
         Pemasukan_Pengeluaran.add(DatePemasukan12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 175, -1, -1));
 
         jLabel6.setText("-");
@@ -924,7 +907,7 @@ public class TransaksiView extends javax.swing.JPanel {
         jLabel12.setText("-");
         Pemasukan_Pengeluaran.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 175, -1, -1));
 
-        add(Pemasukan_Pengeluaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 350, 240));
+        add(Pemasukan_Pengeluaran, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 350, 210));
         add(Kalender, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, 350, 240));
 
         inputTransaksi.setBackground(new java.awt.Color(255, 255, 255));
@@ -965,11 +948,9 @@ public class TransaksiView extends javax.swing.JPanel {
     private javax.swing.JLabel Date6;
     private javax.swing.JLabel Date8;
     private javax.swing.JLabel Date9;
-    private javax.swing.JLabel DatePemasukan1;
     private javax.swing.JLabel DatePemasukan10;
     private javax.swing.JLabel DatePemasukan11;
     private javax.swing.JLabel DatePemasukan12;
-    private javax.swing.JLabel DatePemasukan2;
     private javax.swing.JLabel DatePemasukan3;
     private javax.swing.JLabel DatePemasukan4;
     private javax.swing.JLabel DatePemasukan5;
@@ -998,12 +979,6 @@ public class TransaksiView extends javax.swing.JPanel {
     private javax.swing.JLabel Garis9;
     private javax.swing.JPanel GraphPemasukan;
     private javax.swing.JPanel GraphPengeluaran;
-    private javax.swing.JLabel Income1;
-    private javax.swing.JLabel Income2;
-    private javax.swing.JLabel Income3;
-    private javax.swing.JLabel Income4;
-    private javax.swing.JLabel Income5;
-    private javax.swing.JLabel Income6;
     private javax.swing.JLabel IncomeTotal;
     private javax.swing.JLabel Income_Text;
     private javax.swing.JLabel JenisPemakaian1;
@@ -1027,12 +1002,6 @@ public class TransaksiView extends javax.swing.JPanel {
     private com.toedter.calendar.JCalendar Kalender;
     private javax.swing.JPanel MonthPemasukan;
     private javax.swing.JPanel MonthPengeluaran;
-    private javax.swing.JLabel Outcome1;
-    private javax.swing.JLabel Outcome2;
-    private javax.swing.JLabel Outcome3;
-    private javax.swing.JLabel Outcome4;
-    private javax.swing.JLabel Outcome5;
-    private javax.swing.JLabel Outcome6;
     private javax.swing.JLabel OutcomeTotal;
     private javax.swing.JLabel Outcome_Text;
     private javax.swing.JLabel Payment;
@@ -1072,14 +1041,12 @@ public class TransaksiView extends javax.swing.JPanel {
     private javax.swing.JLabel Rp_Income3;
     private javax.swing.JLabel Rp_Income4;
     private javax.swing.JLabel Rp_Income5;
-    private javax.swing.JLabel Rp_Income6;
     private javax.swing.JLabel Rp_Income_Total;
     private javax.swing.JLabel Rp_Outcome1;
     private javax.swing.JLabel Rp_Outcome2;
     private javax.swing.JLabel Rp_Outcome3;
     private javax.swing.JLabel Rp_Outcome4;
     private javax.swing.JLabel Rp_Outcome5;
-    private javax.swing.JLabel Rp_Outcome6;
     private javax.swing.JLabel Rp_Outcome_Total;
     private javax.swing.JLabel Rp_Pemasukan;
     private javax.swing.JLabel Rp_Pemasukan1;
@@ -1099,7 +1066,6 @@ public class TransaksiView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
@@ -1108,6 +1074,16 @@ public class TransaksiView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel keluarMinggu1;
+    private javax.swing.JLabel keluarMinggu2;
+    private javax.swing.JLabel keluarMinggu3;
+    private javax.swing.JLabel keluarMinggu4;
+    private javax.swing.JLabel keluarMinggu5;
+    private javax.swing.JLabel masukMinggu1;
+    private javax.swing.JLabel masukMinggu2;
+    private javax.swing.JLabel masukMinggu3;
+    private javax.swing.JLabel masukMinggu4;
+    private javax.swing.JLabel masukMinggu5;
     private javax.swing.JPanel pPemasukan;
     private javax.swing.JPanel pPengeluaran;
     // End of variables declaration//GEN-END:variables
