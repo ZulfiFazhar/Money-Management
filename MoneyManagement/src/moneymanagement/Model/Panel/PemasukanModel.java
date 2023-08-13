@@ -348,4 +348,115 @@ public class PemasukanModel {
         return emoney1;
     }
     
+    public int getMinggu1ByUsername(String username) {
+        int totalMinggu1 = 0;
+
+        try {
+            String query = "SELECT SUM(jumlah) FROM pemasukan WHERE username = ? AND tanggal BETWEEN '30/07/2023' AND '05/08/2023'";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                totalMinggu1 = resultSet.getInt(1);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return totalMinggu1;
+    }
+    
+    public int getMinggu2ByUsername(String username) {
+        int totalMinggu2 = 0;
+
+        try {
+            String query = "SELECT SUM(jumlah) FROM pemasukan WHERE username = ? AND tanggal BETWEEN '06/08/2023' AND '12/08/2023'";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                totalMinggu2 = resultSet.getInt(1);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return totalMinggu2;
+    }
+    
+    public int getMinggu3ByUsername(String username) {
+        int totalMinggu3 = 0;
+
+        try {
+            String query = "SELECT SUM(jumlah) FROM pemasukan WHERE username = ? AND tanggal BETWEEN '13/08/2023' AND '19/08/2023'";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                totalMinggu3 = resultSet.getInt(1);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return totalMinggu3;
+    }
+    
+    public int getMinggu4ByUsername(String username) {
+        int totalMinggu4 = 0;
+
+        try {
+            String query = "SELECT SUM(jumlah) FROM pemasukan WHERE username = ? AND tanggal BETWEEN '20/08/2023' AND '26/08/2023'";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                totalMinggu4 = resultSet.getInt(1);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return totalMinggu4;
+    }
+    
+    public int getMinggu5ByUsername(String username) {
+        int totalMinggu5 = 0;
+
+        try {
+            String query = "SELECT SUM(jumlah) FROM pemasukan WHERE username = ? AND tanggal BETWEEN '27/08/2023' AND '02/09/2023'";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                totalMinggu5 = resultSet.getInt(1);
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return totalMinggu5;
+    }
+    
+    
 }

@@ -75,7 +75,7 @@ public class StatistikView extends javax.swing.JPanel {
     private int[] valueDebit1;
     private int[] valueEMoney1;
     
-    private int nilaiMaxData = 10000000;
+    private int nilaiMaxData = 1000000;
     
 //  Warna 
     private Color getColorForIndex(int index) {
