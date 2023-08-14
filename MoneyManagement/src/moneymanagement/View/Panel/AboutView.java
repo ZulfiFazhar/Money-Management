@@ -39,34 +39,48 @@ public class AboutView extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         PanelNama6 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
         PanelNama7 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
         PanelNama8 = new javax.swing.JPanel();
-        jLabel37 = new javax.swing.JLabel();
+        PanelNama9 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -135,23 +149,19 @@ public class AboutView extends javax.swing.JPanel {
 
         add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel8.setText("Foto");
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Foto/tijar.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel8)
-                .addContainerGap(60, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(jLabel8))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(73, 73, 73))
+            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 170, Short.MAX_VALUE)
         );
 
         add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 140, 170));
@@ -203,36 +213,24 @@ public class AboutView extends javax.swing.JPanel {
         add(PanelNama3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 220, 20));
 
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel4.setText("Kontribusi/Jobdesk");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 220, -1));
+        jLabel4.setText("- Implementasi Konsep MVC");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 240, -1));
 
         jLabel10.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
         jLabel10.setText("10122005");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 220, -1));
-
-        jLabel11.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel11.setText("DST");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 220, -1));
 
         jLabel12.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
         jLabel12.setText("10122019");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 220, -1));
 
         jLabel15.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel15.setText("Kontribusi/Jobdesk");
+        jLabel15.setText("Kontribusi 100%");
         add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 580, 220, -1));
 
         jLabel17.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel17.setText("Kontribusi/Jobdesk");
+        jLabel17.setText("Kontribusi 100%");
         add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 220, -1));
-
-        jLabel18.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel18.setText("DST");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 220, -1));
-
-        jLabel19.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel19.setText("DST");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 610, 220, -1));
 
         PanelNama6.setBackground(new java.awt.Color(53, 215, 185));
 
@@ -257,45 +255,17 @@ public class AboutView extends javax.swing.JPanel {
 
         add(PanelNama6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 220, 20));
 
-        jLabel27.setText("Foto");
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel27)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(jLabel27)
-                .addGap(73, 73, 73))
-        );
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Foto/zulfi.jpg"))); // NOI18N
+        jPanel9.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 170));
 
         add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 140, 170));
 
-        jLabel28.setText("Foto");
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel28)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(jLabel28)
-                .addGap(73, 73, 73))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Foto/tanisa.jpg"))); // NOI18N
+        jPanel10.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, -1));
 
         add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 140, 170));
 
@@ -303,34 +273,26 @@ public class AboutView extends javax.swing.JPanel {
         jLabel13.setText("10122021");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, 220, -1));
 
-        jLabel29.setText("Foto");
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Foto/bambang.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addComponent(jLabel29)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(jLabel29)
-                .addGap(73, 73, 73))
+            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 170, Short.MAX_VALUE)
         );
 
         add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 140, 170));
 
         jLabel30.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel30.setText("Kontribusi/Jobdesk");
+        jLabel30.setText("Kontribusi 100%");
         add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 220, -1));
-
-        jLabel31.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel31.setText("DST");
-        add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 220, -1));
 
         PanelNama7.setBackground(new java.awt.Color(53, 215, 185));
 
@@ -359,54 +321,69 @@ public class AboutView extends javax.swing.JPanel {
         jLabel33.setText("10122027");
         add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 220, -1));
 
-        jLabel34.setText("Foto");
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Foto/umam.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                 .addComponent(jLabel34)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(jLabel34)
-                .addGap(73, 73, 73))
+            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 170, Short.MAX_VALUE)
         );
 
         add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 140, 170));
 
         jLabel35.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel35.setText("Kontribusi/Jobdesk");
+        jLabel35.setText("Kontribusi 100%");
         add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 370, 220, -1));
-
-        jLabel36.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel36.setText("DST");
-        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 220, -1));
 
         PanelNama8.setBackground(new java.awt.Color(53, 215, 185));
 
-        jLabel37.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel37.setText(" Khotibul Umam");
+        PanelNama9.setBackground(new java.awt.Color(53, 215, 185));
+
+        jLabel39.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText(" Khotibul Umam");
+
+        javax.swing.GroupLayout PanelNama9Layout = new javax.swing.GroupLayout(PanelNama9);
+        PanelNama9.setLayout(PanelNama9Layout);
+        PanelNama9Layout.setHorizontalGroup(
+            PanelNama9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNama9Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        PanelNama9Layout.setVerticalGroup(
+            PanelNama9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelNama9Layout.createSequentialGroup()
+                .addComponent(jLabel39)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout PanelNama8Layout = new javax.swing.GroupLayout(PanelNama8);
         PanelNama8.setLayout(PanelNama8Layout);
         PanelNama8Layout.setHorizontalGroup(
             PanelNama8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelNama8Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 220, Short.MAX_VALUE)
+            .addGroup(PanelNama8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelNama8Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PanelNama9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         PanelNama8Layout.setVerticalGroup(
             PanelNama8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelNama8Layout.createSequentialGroup()
-                .addComponent(jLabel37)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 20, Short.MAX_VALUE)
+            .addGroup(PanelNama8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PanelNama8Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(PanelNama9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         add(PanelNama8, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 310, 220, 20));
@@ -417,6 +394,79 @@ public class AboutView extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moneymanagement/Assets/Icon/about -title.png"))); // NOI18N
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel5.setText("Kontribusi 100%");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 220, -1));
+
+        jLabel7.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel7.setText("- Slicing UI Login & Register View");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 270, -1));
+
+        jLabel11.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel11.setText("- CRUD Database");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 240, -1));
+
+        jLabel14.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel14.setText("- Sistem Login & Register");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 240, -1));
+
+        jLabel18.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel18.setText("- Implementasi Dynamic Panel");
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 250, -1));
+
+        jLabel19.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel19.setText("- Slicing UI Navbar View");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 240, -1));
+
+        jLabel20.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel20.setText("- UI/UX Designer");
+        add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 240, -1));
+
+        jLabel21.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel21.setText("- Implementasi Calendar");
+        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 240, -1));
+
+        jLabel22.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel22.setText("- Membuat Pie Chart");
+        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 240, -1));
+
+        jLabel24.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel24.setText("- Slicing UI Transaksi Form");
+        add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 240, -1));
+
+        jLabel25.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel25.setText("- Slicing UI Transaksi View");
+        add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 240, -1));
+
+        jLabel28.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel28.setText("- Fitur Tanggal dan Jam Realtime");
+        add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, 270, -1));
+
+        jLabel31.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel31.setText("- Slicing UI Saldo View");
+        add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, 240, -1));
+
+        jLabel36.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel36.setText("- Slicing UI Dashboard View");
+        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 240, -1));
+
+        jLabel40.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel40.setText("- Dummy Data Untuk Diagram");
+        add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 650, 240, -1));
+
+        jLabel41.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel41.setText("- Membuat Diagram Batang");
+        add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 630, 240, -1));
+
+        jLabel42.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 18)); // NOI18N
+        jLabel42.setText("- Slicing UI Statistik View");
+        add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 610, 240, -1));
+
+        jLabel3.setFont(new java.awt.Font("Franklin Gothic Book", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(53, 215, 185));
+        jLabel3.setText("KELOMPOK 3");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 560, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -426,19 +476,28 @@ public class AboutView extends javax.swing.JPanel {
     private javax.swing.JPanel PanelNama6;
     private javax.swing.JPanel PanelNama7;
     private javax.swing.JPanel PanelNama8;
+    private javax.swing.JPanel PanelNama9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -446,10 +505,15 @@ public class AboutView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
